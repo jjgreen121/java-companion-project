@@ -21,9 +21,8 @@ import com.organization.mvcproject.MGL_Task1.service.GameService;
 @Controller
 public class MGLTask1Controller {
 
-	//TODO 1.0 variable naming convention, improve reference name
 	@Autowired
-	private GameService javaGameService;
+	private GameService gameService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -70,13 +69,13 @@ public class MGLTask1Controller {
 	//TODO 1.0 RequestMapping URL should follow RESTful.
 	@RequestMapping(value = "/game/getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
+		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	//TODO 1.0 RequestMapping URL should follow RESTful convention
 	@RequestMapping(value = "/game/createGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
-		javaGameService.saveGame(game);
+		gameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 }
