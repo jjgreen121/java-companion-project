@@ -34,7 +34,7 @@ public class MGLTask1Controller {
 		return new ModelAndView("reviewCreatePage", "command", new Review());
 	}
 
-	@RequestMapping(value = "/addReview", method = RequestMethod.POST)
+	@RequestMapping(value = "/review", method = RequestMethod.POST)
 	public ModelAndView addReview(Review review, ModelMap model) {
 		if(review.getAuthor().equals("")) {
 			review.setAuthor("anonymous");

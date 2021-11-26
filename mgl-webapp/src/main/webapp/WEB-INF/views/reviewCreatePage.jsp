@@ -27,11 +27,11 @@
            <mgl:myNav/>
             <div id="ReviewFormDiv" class="container">
                 <br>
-                <form name="submitReviewForm" method="POST" action="addReview">
+                <form name="submitReviewForm" method="POST" action="review">
                     <table class="table table-dark text-light">
                         <tr>
                             <td><label>Review Body*</label></td>
-                            <td><textarea name="reviewBody" class="form-control" placeholder="What did you like/dislike about the game? [required]" required></textarea></td>
+                            <td><textarea name="body" class="form-control" placeholder="What did you like/dislike about the game? [required]" required></textarea></td>
                         </tr>
                         <tr>
                             <td><label>Author</label></td>
