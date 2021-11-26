@@ -52,7 +52,6 @@ public class MGLTask1Controller {
 	 * TODO 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
 	 */
 	
-	//TODO 1.0 RequestMapping URL should follow RESTful.
 	@RequestMapping(value = "/game/getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
 		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
