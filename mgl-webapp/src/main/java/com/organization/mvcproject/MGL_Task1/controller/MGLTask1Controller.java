@@ -39,11 +39,7 @@ public class MGLTask1Controller {
 		if(review.getAuthor().equals("")) {
 			review.setAuthor("anonymous");
 		}
-	/**
-	 * TODO 1.0 Rename the jsp view, to "reviewDetailPage" because what is the view the "result" of?
-	 * update games.jsp as well. 
-	 */
-		return new ModelAndView("result", "submittedReview", review);
+		return new ModelAndView("reviewDetailPage", "submittedReview", review);
 	}
 
 	
