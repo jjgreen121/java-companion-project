@@ -18,7 +18,7 @@ import com.organization.mvcproject.mgl.model.Review;
 import com.organization.mvcproject.mgl.service.GameService;
 
 @Controller
-public class MGLTask1Controller {
+public class MglController {
 
 	@Autowired
 	private GameService gameService;
