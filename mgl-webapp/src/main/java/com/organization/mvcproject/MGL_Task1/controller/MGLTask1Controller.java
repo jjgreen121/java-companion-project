@@ -31,12 +31,7 @@ public class MGLTask1Controller {
 	
 	@RequestMapping(value = "/review", method = RequestMethod.GET)
 	public ModelAndView review() {
-	/**
-	 * TODO 1.0 Rename the jsp view, to "reviewCreatePage" because it matches the URL triggering a circular view path error.
-	 * update games.jsp as well. 
-	 * SEE:  https://www.baeldung.com/spring-circular-view-path-error
-	 */
-		return new ModelAndView("review", "command", new Review());
+		return new ModelAndView("reviewCreatePage", "command", new Review());
 	}
 
 	@RequestMapping(value = "/addReview", method = RequestMethod.POST)
