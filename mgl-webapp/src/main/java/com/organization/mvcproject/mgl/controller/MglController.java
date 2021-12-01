@@ -16,64 +16,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.mgl.model.Game;
 import com.organization.mvcproject.mgl.model.Review;
 import com.organization.mvcproject.mgl.service.GameService;
 
-@Controller
+@RestController
+@RequestMapping("/game")
 public class MglController {
 
 	@Autowired
 	private GameService gameService;
-
+	
 	@GetMapping("/")
-	public String home() {
-		return "index";
-	}
-	
-	@GetMapping("/review")
-	public ModelAndView review() {
-		return new ModelAndView("reviewCreatePage", "command", new Review());
-	}
-
-	@PostMapping("/review")
-	public ModelAndView addReview(Review review, ModelMap model) {
-		if(review.getAuthor().equals("")) {
-			review.setAuthor("anonymous");
-		}
-		return new ModelAndView("reviewDetailPage", "submittedReview", review);
-	}
-
-	
-	@GetMapping("/games")
-	public ModelAndView game() {
-		return new ModelAndView("gamesPage", "command", new Game());
-	}
-
-	/**
-	 * TODO 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
-	 */
-	
-	@GetMapping("/game")
 	public ResponseEntity<List<Game>> fetchAllGames() {
 		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
-	@PostMapping("/game")
+	@PostMapping("/")
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
 		gameService.saveGame(game);
-		return new ResponseEntity<Void>(HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping("/game/{id}")
-	public ResponseEntity<?> deleteGame(@PathVariable("id") Long id) {
-		return new ResponseEntity<>(gameService.deleteGame(id), HttpStatus.OK);
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteGame(@PathVariable("id") Long id) {
+		if (gameService.deleteGame(id)) {
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 	
-	@PutMapping("/game/{id}")
-	public ResponseEntity<?> updateGame(@RequestBody Game game, @PathVariable("id") Long id) {
+	@PutMapping("/{id}")
+	public ResponseEntity<Game> updateGame(@RequestBody Game game, @PathVariable("id") Long id) {
 		Game update = gameService.updateGame(game, id);
 		if (update != null) {
 			return new ResponseEntity<>(update, HttpStatus.OK);

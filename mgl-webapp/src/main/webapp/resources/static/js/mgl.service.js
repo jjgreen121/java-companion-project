@@ -24,5 +24,19 @@ angular.module('MglApp').factory('MglService', ['$http', function($http) {
 				}
 			);
 		}
+		
+		function deleteGame(id) {
+			return $http.delete(REST_SERVICE_URI + id).then(function(response) {
+					return response.data;
+				}
+			);
+		}
+		
+		function updateGame(game, id) {
+			return $http.put(REST_SERVICE_URI + id, game).then(function(response) {
+					return response.data;
+				}
+			);
+		}
 
 }]);

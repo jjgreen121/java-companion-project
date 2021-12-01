@@ -21,6 +21,6 @@ angular.module('MglApp').controller('MglController',
 				self.fetchAllGames();
 				});
 			}
-
+			
 			self.fetchAllGames();
 		} ]);

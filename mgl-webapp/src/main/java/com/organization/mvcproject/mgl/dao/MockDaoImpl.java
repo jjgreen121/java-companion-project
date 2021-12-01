@@ -3,8 +3,11 @@ package com.organization.mvcproject.mgl.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.organization.mvcproject.mgl.model.Game;
 
+@Repository
 public class MockDaoImpl implements MockDao {
 	
 	private static Long gameId = new Long(0);
@@ -73,6 +76,5 @@ public class MockDaoImpl implements MockDao {
 		}
 		return _game;
 	}
-	
 	
 }
