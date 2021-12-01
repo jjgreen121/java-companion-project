@@ -23,5 +23,10 @@ public class GameServiceImpl implements GameService {
 	public Game saveGame(Game game) {
 		return mockDao.saveGame(game);
 	}
+	
+	@Override
+	public Game getGameById(long id) {
+		return mockDao.getGameById(id);
+	}
 
 }

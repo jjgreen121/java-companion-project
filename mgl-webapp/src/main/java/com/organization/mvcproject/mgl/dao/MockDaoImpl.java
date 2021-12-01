@@ -50,5 +50,12 @@ public class MockDaoImpl implements MockDao {
 		games.add(game);
 		return game;
 	}
-
+	
+	public Game getGameById(long id) {
+		for (Game game : games) {
+			if (game.getId() == id) return game;
+		}
+		return null;
+	}
+	
 }

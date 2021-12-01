@@ -9,5 +9,7 @@ public interface MockDao {
 	List<Game> retrieveAllGames();
 	
 	Game saveGame(Game game);
+	
+	Game getGameById(long id);
 
 }
