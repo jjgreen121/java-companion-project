@@ -25,8 +25,13 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	@Override
-	public Game getGameById(long id) {
+	public Game getGameById(Long id) {
 		return mockDao.getGameById(id);
+	}
+	
+	@Override
+	public boolean deleteGame(Long id) {
+		return mockDao.deleteGame(id);
 	}
 
 }

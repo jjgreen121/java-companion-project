@@ -51,11 +51,19 @@ public class MockDaoImpl implements MockDao {
 		return game;
 	}
 	
-	public Game getGameById(long id) {
+	@Override
+	public Game getGameById(Long id) {
 		for (Game game : games) {
 			if (game.getId() == id) return game;
 		}
 		return null;
 	}
+	
+	@Override
+	public boolean deleteGame(Long id) {
+		return games.remove(getGameById(id));
+	}
+	
+	
 	
 }
