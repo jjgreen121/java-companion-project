@@ -54,7 +54,7 @@ public class MockDaoImpl implements MockDao {
 	@Override
 	public Game getGameById(Long id) {
 		for (Game game : games) {
-			if (game.getId() == id) return game;
+			if (game.getId().equals(id)) return game;
 		}
 		return null;
 	}
@@ -64,6 +64,15 @@ public class MockDaoImpl implements MockDao {
 		return games.remove(getGameById(id));
 	}
 	
+	@Override
+	public Game updateGame(Game game, Long id) {
+		Game g = getGameById(id);
+		if (g != null) {
+			g.setGenre(game.getGenre());
+			g.setName(game.getName());
+		}
+		return g;
+	}
 	
 	
 }

@@ -33,5 +33,10 @@ public class GameServiceImpl implements GameService {
 	public boolean deleteGame(Long id) {
 		return mockDao.deleteGame(id);
 	}
+	
+	@Override
+	public Game updateGame(Game game, Long id) {
+		return mockDao.updateGame(game, id);
+	}
 
 }
