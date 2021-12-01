@@ -66,12 +66,12 @@ public class MockDaoImpl implements MockDao {
 	
 	@Override
 	public Game updateGame(Game game, Long id) {
-		Game g = getGameById(id);
-		if (g != null) {
-			g.setGenre(game.getGenre());
-			g.setName(game.getName());
+		Game _game = getGameById(id);
+		if (_game != null) {
+			_game.setGenre(game.getGenre());
+			_game.setName(game.getName());
 		}
-		return g;
+		return _game;
 	}
 	
 	
