@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.mgl.model.Game;
+import com.organization.mvcproject.mgl.model.GameImpl;
 import com.organization.mvcproject.mgl.model.ReviewImpl;
 
 @Controller
@@ -33,7 +33,7 @@ public class ModelViewController {
 	
 	@GetMapping("/games")
 	public ModelAndView game() {
-		return new ModelAndView("gamesPage", "command", new Game());
+		return new ModelAndView("gamesPage", "command", new GameImpl());
 	}
 
 }

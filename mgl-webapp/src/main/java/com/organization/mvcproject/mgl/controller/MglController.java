@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.api.service.GameService;
-import com.organization.mvcproject.mgl.model.Game;
+import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.mgl.model.GameImpl;
 import com.organization.mvcproject.mgl.model.ReviewImpl;
 
 @RestController
@@ -36,7 +37,7 @@ public class MglController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<Void> createGame(@RequestBody Game game) {
+	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
 		gameService.saveGame(game);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
@@ -50,7 +51,7 @@ public class MglController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Game> updateGame(@RequestBody Game game, @PathVariable("id") Long id) {
+	public ResponseEntity<Game> updateGame(@RequestBody GameImpl game, @PathVariable("id") Long id) {
 		Game update = gameService.updateGame(game, id);
 		if (update != null) {
 			return new ResponseEntity<>(update, HttpStatus.OK);

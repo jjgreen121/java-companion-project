@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.api.dao.MockDao;
 import com.organization.mvcproject.api.service.GameService;
-import com.organization.mvcproject.mgl.model.Game;
+import com.organization.mvcproject.api.model.Game;
 
 @Service
 public class GameServiceImpl implements GameService {
