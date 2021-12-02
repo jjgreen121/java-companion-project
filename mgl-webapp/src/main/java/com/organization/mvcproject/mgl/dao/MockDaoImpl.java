@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.organization.mvcproject.api.dao.MockDao;
 import com.organization.mvcproject.mgl.model.Game;
 
 @Repository
@@ -12,7 +13,7 @@ public class MockDaoImpl implements MockDao {
 	
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
-	private static List<Game> games = new ArrayList<Game>();
+	private static List<Game> games = new ArrayList<>();
 
 	static {
 		games = populateGames();
@@ -50,7 +51,7 @@ public class MockDaoImpl implements MockDao {
 	@Override
 	public Game saveGame(Game game) {
 		game.setId(++gameId);
-		games.add(game);
+		games.add((Game) game);
 		return game;
 	}
 	

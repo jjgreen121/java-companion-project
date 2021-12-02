@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.organization.mvcproject.mgl.dao.MockDao;
+import com.organization.mvcproject.api.dao.MockDao;
+import com.organization.mvcproject.api.service.GameService;
 import com.organization.mvcproject.mgl.model.Game;
 
 @Service

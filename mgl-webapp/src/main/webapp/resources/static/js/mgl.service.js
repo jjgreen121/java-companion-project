@@ -6,7 +6,9 @@ angular.module('MglApp').factory('MglService', ['$http', function($http) {
 
 		var factory = {
 			fetchAllGames : fetchAllGames,
-			createGame : createGame
+			createGame : createGame,
+			deleteGame : deleteGame,
+			updateGame : updateGame
 		};
 
 		return factory;

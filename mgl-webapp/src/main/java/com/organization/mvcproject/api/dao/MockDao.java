@@ -1,13 +1,13 @@
-package com.organization.mvcproject.mgl.service;
+package com.organization.mvcproject.api.dao;
 
 import java.util.List;
 
 import com.organization.mvcproject.mgl.model.Game;
 
-public interface GameService {
-
+public interface MockDao {
+	
 	List<Game> retrieveAllGames();
-
+	
 	Game saveGame(Game game);
 	
 	Game getGameById(Long id);

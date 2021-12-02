@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.mgl.model.Game;
-import com.organization.mvcproject.mgl.model.Review;
+import com.organization.mvcproject.mgl.model.ReviewImpl;
 
 @Controller
 public class ModelViewController {
@@ -19,11 +19,11 @@ public class ModelViewController {
 	
 	@GetMapping("/review")
 	public ModelAndView review() {
-		return new ModelAndView("reviewCreatePage", "command", new Review());
+		return new ModelAndView("reviewCreatePage", "command", new ReviewImpl());
 	}
 
 	@PostMapping("/review")
-	public ModelAndView addReview(Review review, ModelMap model) {
+	public ModelAndView addReview(ReviewImpl review, ModelMap model) {
 		if(review.getAuthor().equals("")) {
 			review.setAuthor("anonymous");
 		}

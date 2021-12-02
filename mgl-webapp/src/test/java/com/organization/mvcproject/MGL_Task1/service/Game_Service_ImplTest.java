@@ -25,9 +25,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.organization.mvcproject.api.service.GameService;
 import com.organization.mvcproject.config.MvcConfiguration;
 import com.organization.mvcproject.mgl.model.Game;
-import com.organization.mvcproject.mgl.service.GameService;
 
 @RunWith(JUnitPlatform.class)
 @ExtendWith(SpringExtension.class)

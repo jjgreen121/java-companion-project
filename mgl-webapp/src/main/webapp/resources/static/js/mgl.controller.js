@@ -22,5 +22,13 @@ angular.module('MglApp').controller('MglController',
 				});
 			}
 			
+			self.deleteGame = function(game){
+				console.log("delete attempt");
+				return MglService.deleteGame(game.id).then( function() {
+				self.fetchAllGames();
+				});
+			}
+			
 			self.fetchAllGames();
+			
 		} ]);

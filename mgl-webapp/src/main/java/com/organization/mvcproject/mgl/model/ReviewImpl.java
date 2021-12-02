@@ -1,6 +1,6 @@
 package com.organization.mvcproject.mgl.model;
 
-public class Review {
+public class ReviewImpl {
 	
 	private String body;
 	private String author;
