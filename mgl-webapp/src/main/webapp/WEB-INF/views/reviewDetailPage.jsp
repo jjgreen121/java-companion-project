@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mgl" %>
     <!DOCTYPE html>
     <html>
@@ -24,9 +23,9 @@
         <h2 class="text-light">Submitted Review Information</h2>
         <table class="table table-dark text-light">
             <tr>
-                <td>ReviewBody</td>
+                <td>body</td>
                 <td>
-                    <p>${submittedReview.reviewBody}</p>
+                    <p>${submittedReview.body}</p>
                 </td>
             </tr>
             <tr>
