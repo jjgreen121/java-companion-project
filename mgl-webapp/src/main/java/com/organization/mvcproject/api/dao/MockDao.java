@@ -14,6 +14,6 @@ public interface MockDao {
 	
 	boolean deleteGame(Long id);
 	
-	Game updateGame(Game game, Long id);
+	Game updateGame(Long id, Game game);
 
 }

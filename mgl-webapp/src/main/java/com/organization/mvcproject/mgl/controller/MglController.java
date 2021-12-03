@@ -51,10 +51,10 @@ public class MglController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Game> updateGame(@RequestBody GameImpl game, @PathVariable("id") Long id) {
-		Game update = gameService.updateGame(game, id);
+	public ResponseEntity<?> updateGame(@PathVariable("id") Long id, @RequestBody GameImpl game) {
+		Game update = gameService.updateGame(id, game);
 		if (update != null) {
-			return new ResponseEntity<>(update, HttpStatus.OK);
+			return new ResponseEntity<>((GameImpl) update, HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}

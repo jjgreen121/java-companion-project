@@ -29,6 +29,14 @@ angular.module('MglApp').controller('MglController',
 				});
 			}
 			
+			self.updateGame = function(game){
+			return MglService.updateGame(game.id, self.game).then( function() {
+			self.fetchAllGames();
+				});
+			}
+			
 			self.fetchAllGames();
 			
-		} ]);
+		}] );
+		
+		

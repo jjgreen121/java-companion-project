@@ -36,8 +36,8 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	@Override
-	public Game updateGame(Game game, Long id) {
-		return mockDao.updateGame(game, id);
+	public Game updateGame(Long id, Game game) {
+		return mockDao.updateGame(id, game);
 	}
 
 }

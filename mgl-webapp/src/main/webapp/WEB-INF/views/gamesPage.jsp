@@ -81,11 +81,10 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="currentGame in mglController.games">
-                                <td><span ng-bind="currentGame.name"></span></td>
-                                <td><span ng-bind="currentGame.genre"></span></td>
-                                <td><button ng-click="mglController.deleteGame(currentGame)" class="btn btn-primary btn-sm">Delete</button></td>
-                                <td>
-                                </td>
+                                	<td><span ng-bind="currentGame.name"></span></td>
+                                	<td><span ng-bind="currentGame.genre"></span></td>
+                                	<td><button ng-click="mglController.updateGame(currentGame)" class="btn btn-primary btn-sm">Update</button></td>
+                                	<td><button ng-click="mglController.deleteGame(currentGame)" class="btn btn-primary btn-sm">Delete</button></td>                 
                             </tr>
                         </tbody>
                     </table>

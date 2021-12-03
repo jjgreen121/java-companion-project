@@ -34,7 +34,7 @@ angular.module('MglApp').factory('MglService', ['$http', function($http) {
 			);
 		}
 		
-		function updateGame(game, id) {
+		function updateGame(id, game) {
 			return $http.put(REST_SERVICE_URI + id, game).then(function(response) {
 					return response.data;
 				}
